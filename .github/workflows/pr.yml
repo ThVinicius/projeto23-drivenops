@@ -1,0 +1,18 @@
+name: PullRequest
+on: [pull_request]
+jobs:
+  PullRequest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Make envFile
+        uses: SpicyPizza/create-envfile@v1
+        with:
+          envkey_POSTGRES_USER: "postgres"
+          envkey_POSTGRES_PASSWORD: "123456"
+          envkey_POSTGRES_DB: "banco"
+          envkey_DATABASE_URL: "postgresql://postgres:123456@db:5432/banco"
+          file_name: ".env"
+      - name: Run tests
+        run: docker-compose run node_app npm run test
