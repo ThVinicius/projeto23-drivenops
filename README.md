@@ -13,13 +13,44 @@ Um exercicio prático onde:
 
 ## Variaveis de ambiente
 
+### Front-end
+
+- `REACT_APP_BASE_URL`
+  - Ex: http://localhost:80/api
+
 ### Back-end
 
 - `DATABASE_URL`
-  - Ex: postgresql://postgres:1234@localhost:5432/driven_ops
+  - Ex: postgresql://postgres:1234@db:5432/driven_ops
 - `POSTGRES_USER`
   - Ex: postgres
 - `POSTGRES_PASSWORD`
-  - 1234
+  - Ex: 1234
 - `POSTGRES_DB`
-  - driven_ops
+  - Ex: driven_ops
+
+## Rodar localmente usando o Docker
+
+1 - Vá no diretório do front-end
+
+```bash
+  cd projeto23-drivenops/front-end
+```
+
+2 - instale as dependencias
+
+```bash
+  npm i
+```
+
+3 - Vá no diretório do back-end
+
+```bash
+  cd projeto23-drivenops/back-end
+```
+
+4 - inicie o docker-compose
+
+```bash
+  docker-compose up --build -d
+```
